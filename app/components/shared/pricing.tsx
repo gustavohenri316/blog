@@ -37,7 +37,7 @@ export const PricingPlans: iAppProps[] = [
     id: 1,
     cardTitle: "Startup",
     cardDescription: "O melhor plano de preços para profissionais.",
-    priceTitle: "$29",
+    priceTitle: "R$ 89",
     benefits: [
       "Sites Ilimitados",
       "Visitantes Ilimitados",
