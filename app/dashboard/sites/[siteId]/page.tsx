@@ -1,3 +1,4 @@
+
 import EmptyState from "@/app/components/dashboard/empty-state";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -28,7 +29,6 @@ import { currentUser } from "@/utils/current-user";
 import prisma from "@/utils/db";
 import {
   Book,
-  FileIcon,
   MoreHorizontal,
   PlusCircle,
   Settings,
@@ -79,48 +79,48 @@ export default async function SiteIdRoute({
         <Button asChild variant="secondary">
           <Link href={`/blog/${data?.subdirectory}`}>
             <Book className="mr-2 size-4" />
-            View Blog
+            Ver Blog
           </Link>
         </Button>
         <Button asChild variant="secondary">
           <Link href={`/dashboard/sites/${siteId}/settings`}>
             <Settings className="mr-2 size-4" />
-            Settings
+            Configurações
           </Link>
         </Button>
         <Button asChild>
           <Link href={`/dashboard/sites/${siteId}/create`}>
             <PlusCircle className="mr-2 size-4" />
-            Create Article
+            Criar Artigo
           </Link>
         </Button>
       </div>
 
       {data?.posts === undefined || data.posts.length === 0 ? (
         <EmptyState
-          title="You dont have any Articles created"
-          description="You currently dont have any articles. please create some so that you can see them right here"
-          buttonText="Create Article"
+          title="Você não tem artigos criados"
+          description="Atualmente você não tem artigos. Crie alguns para vê-los aqui."
+          buttonText="Criar Artigo"
           href={`/dashboard/sites/${siteId}/create`}
         />
       ) : (
         <div>
           <Card>
             <CardHeader>
-              <CardTitle>Articles</CardTitle>
+              <CardTitle>Artigos</CardTitle>
               <CardDescription>
-                Manage your Articles in a simple and intuitive interface
+                Gerencie seus artigos em uma interface simples e intuitiva
               </CardDescription>
             </CardHeader>
             <CardContent>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Image</TableHead>
-                    <TableHead>Title</TableHead>
+                    <TableHead>Imagem</TableHead>
+                    <TableHead>Título</TableHead>
                     <TableHead>Status</TableHead>
-                    <TableHead>Created At</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
+                    <TableHead>Criado em</TableHead>
+                    <TableHead className="text-right">Ações</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -131,7 +131,7 @@ export default async function SiteIdRoute({
                           src={item.image}
                           width={64}
                           height={64}
-                          alt="Article Cover Image"
+                          alt="Imagem do Artigo"
                           className="size-16 rounded-md object-cover"
                         />
                       </TableCell>
@@ -143,11 +143,11 @@ export default async function SiteIdRoute({
                           variant="outline"
                           className="bg-green-500/10 text-green-500"
                         >
-                          Published
+                          Publicado
                         </Badge>
                       </TableCell>
                       <TableCell>
-                        {new Intl.DateTimeFormat("en-US", {
+                        {new Intl.DateTimeFormat("pt-BR", {
                           dateStyle: "medium",
                         }).format(item.createdAt)}
                       </TableCell>
@@ -160,20 +160,20 @@ export default async function SiteIdRoute({
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end">
-                            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                            <DropdownMenuLabel>Ações</DropdownMenuLabel>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem asChild>
                               <Link
                                 href={`/dashboard/sites/${siteId}/${item.id}`}
                               >
-                                Edit
+                                Editar
                               </Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem asChild>
                               <Link
                                 href={`/dashboard/sites/${siteId}/${item.id}/delete`}
                               >
-                                Delete
+                                Deletar
                               </Link>
                             </DropdownMenuItem>
                           </DropdownMenuContent>

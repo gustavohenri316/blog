@@ -13,13 +13,13 @@ export default function CancelledRoute() {
           </div>
 
           <div className="mt-3 w-full text-center sm:mt-5">
-            <h2 className="text-xl font-semibold">Payment Cancelled</h2>
+            <h2 className="text-xl font-semibold">Pagamento Cancelado</h2>
             <p className="mt-2 text-sm tracking-tight text-muted-foreground">
-              No worries, you wont be chafed. Please try again.
+              Não se preocupe, você não será cobrado. Por favor, tente novamente.
             </p>
 
             <Button asChild className="mt-5 w-full">
-              <Link href="/dashboard">Go back to Dashboard</Link>
+              <Link href="/dashboard">Voltar ao Dashboard</Link>
             </Button>
           </div>
         </div>

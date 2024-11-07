@@ -44,7 +44,7 @@ export default async function DashboardIndexPage() {
   const { articles, sites } = await getData(user.id);
   return (
     <div>
-      <h1 className="mb-5 text-2xl font-semibold">Your Sites</h1>
+      <h1 className="mb-5 text-2xl font-semibold">Seus Sites</h1>
       {sites.length > 0 ? (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {sites.map((item) => (
@@ -66,7 +66,7 @@ export default async function DashboardIndexPage() {
               <CardFooter>
                 <Button asChild className="w-full">
                   <Link href={`/dashboard/sites/${item.id}`}>
-                    View Articles
+                    Ver Artigos
                   </Link>
                 </Button>
               </CardFooter>
@@ -75,14 +75,14 @@ export default async function DashboardIndexPage() {
         </div>
       ) : (
         <EmptyState
-          title="You don't have any sites created"
-          description="You currently don't have any Sites. Please create some so that you can see them right here."
+          title="Você não tem sites criados"
+          description="Atualmente você não tem Sites. Crie alguns para poder vê-los aqui."
           href="/dashboard/sites/new"
-          buttonText="Create Site"
+          buttonText="Criar Site"
         />
       )}
 
-      <h1 className="mb-5 mt-10 text-2xl font-semibold">Recent Articles</h1>
+      <h1 className="mb-5 mt-10 text-2xl font-semibold">Artigos Recentes</h1>
       {articles.length > 0 ? (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {articles.map((item) => (
@@ -104,7 +104,7 @@ export default async function DashboardIndexPage() {
               <CardFooter>
                 <Button asChild className="w-full">
                   <Link href={`/dashboard/sites/${item.siteId}/${item.id}`}>
-                    Edit Article
+                    Editar Artigo
                   </Link>
                 </Button>
               </CardFooter>
@@ -113,9 +113,9 @@ export default async function DashboardIndexPage() {
         </div>
       ) : (
         <EmptyState
-          title="You don't have any articles created"
-          description="Your currently don't have any articles created. Please create some so that you can see them right here"
-          buttonText="Create Article"
+          title="Você não tem artigos criados"
+          description="Atualmente você não tem artigos criados. Crie alguns para poder vê-los aqui."
+          buttonText="Criar Artigo"
           href="/dashboard/sites"
         />
       )}

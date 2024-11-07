@@ -14,9 +14,9 @@ import { Command, renderItems } from "novel/extensions";
 
 export const suggestionItems = createSuggestionItems([
   {
-    title: "Text",
-    description: "Just start typing with plain text.",
-    searchTerms: ["p", "paragraph"],
+    title: "Texto",
+    description: "Comece a digitar com texto simples.",
+    searchTerms: ["p", "parágrafo"],
     icon: <Text size={18} />,
     command: ({ editor, range }) => {
       editor
@@ -28,18 +28,18 @@ export const suggestionItems = createSuggestionItems([
     },
   },
   {
-    title: "To-do List",
-    description: "Track tasks with a to-do list.",
-    searchTerms: ["todo", "task", "list", "check", "checkbox"],
+    title: "Lista de Tarefas",
+    description: "Acompanhe as tarefas com uma lista de afazeres.",
+    searchTerms: ["todo", "tarefa", "lista", "check", "caixa de seleção"],
     icon: <CheckSquare size={18} />,
     command: ({ editor, range }) => {
       editor.chain().focus().deleteRange(range).toggleTaskList().run();
     },
   },
   {
-    title: "Heading 1",
-    description: "Big section heading.",
-    searchTerms: ["title", "big", "large"],
+    title: "Cabeçalho 1",
+    description: "Cabeçalho de seção grande.",
+    searchTerms: ["título", "grande", "grandeza"],
     icon: <Heading1 size={18} />,
     command: ({ editor, range }) => {
       editor
@@ -51,9 +51,9 @@ export const suggestionItems = createSuggestionItems([
     },
   },
   {
-    title: "Heading 2",
-    description: "Medium section heading.",
-    searchTerms: ["subtitle", "medium"],
+    title: "Cabeçalho 2",
+    description: "Cabeçalho de seção médio.",
+    searchTerms: ["subtítulo", "médio"],
     icon: <Heading2 size={18} />,
     command: ({ editor, range }) => {
       editor
@@ -65,9 +65,9 @@ export const suggestionItems = createSuggestionItems([
     },
   },
   {
-    title: "Heading 3",
-    description: "Small section heading.",
-    searchTerms: ["subtitle", "small"],
+    title: "Cabeçalho 3",
+    description: "Cabeçalho de seção pequeno.",
+    searchTerms: ["subtítulo", "pequeno"],
     icon: <Heading3 size={18} />,
     command: ({ editor, range }) => {
       editor
@@ -79,26 +79,26 @@ export const suggestionItems = createSuggestionItems([
     },
   },
   {
-    title: "Bullet List",
-    description: "Create a simple bullet list.",
-    searchTerms: ["unordered", "point"],
+    title: "Lista com Marcadores",
+    description: "Crie uma lista simples com marcadores.",
+    searchTerms: ["não ordenada", "ponto"],
     icon: <List size={18} />,
     command: ({ editor, range }) => {
       editor.chain().focus().deleteRange(range).toggleBulletList().run();
     },
   },
   {
-    title: "Numbered List",
-    description: "Create a list with numbering.",
-    searchTerms: ["ordered"],
+    title: "Lista Numerada",
+    description: "Crie uma lista com numeração.",
+    searchTerms: ["ordenada"],
     icon: <ListOrdered size={18} />,
     command: ({ editor, range }) => {
       editor.chain().focus().deleteRange(range).toggleOrderedList().run();
     },
   },
   {
-    title: "Quote",
-    description: "Capture a quote.",
+    title: "Citação",
+    description: "Capture uma citação.",
     searchTerms: ["blockquote"],
     icon: <TextQuote size={18} />,
     command: ({ editor, range }) =>
@@ -111,14 +111,15 @@ export const suggestionItems = createSuggestionItems([
         .run(),
   },
   {
-    title: "Code",
-    description: "Capture a code snippet.",
-    searchTerms: ["codeblock"],
+    title: "Código",
+    description: "Capture um trecho de código.",
+    searchTerms: ["bloco de código"],
     icon: <Code size={18} />,
     command: ({ editor, range }) =>
       editor.chain().focus().deleteRange(range).toggleCodeBlock().run(),
   },
 ]);
+
 
 export const slashCommand = Command.configure({
   suggestion: {

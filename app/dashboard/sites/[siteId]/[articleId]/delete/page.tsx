@@ -20,20 +20,20 @@ export default async function DeleteForm({
     <div className="flex flex-1 items-center justify-center">
       <Card className="max-w-xl">
         <CardHeader>
-          <CardTitle>Are your absolutely sure?</CardTitle>
+          <CardTitle>Você tem certeza absoluta?</CardTitle>
           <CardDescription>
-            This action cannot be undone. This will delelete this article and
-            remove all data from our server
+            Esta ação não pode ser desfeita. Isso excluirá este artigo e
+            removerá todos os dados do nosso servidor.
           </CardDescription>
         </CardHeader>
         <CardFooter className="flex w-full justify-between">
           <Button variant="secondary" asChild>
-            <Link href={`/dashboard/sites/${siteId}`}>Cancel</Link>
+            <Link href={`/dashboard/sites/${siteId}`}>Cancelar</Link>
           </Button>
           <form action={deletePost}>
             <input type="hidden" name="articleId" value={articleId} />
             <input type="hidden" name="siteId" value={siteId} />
-            <SubmitButton variant="destructive" text="Delete Article" />
+            <SubmitButton variant="destructive" text="Excluir Artigo" />
           </form>
         </CardFooter>
       </Card>

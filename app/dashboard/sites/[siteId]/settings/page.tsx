@@ -26,23 +26,23 @@ export default async function SettingsSiteRoute({
             <ChevronLeft className="size-4" />
           </Link>
         </Button>
-        <h3 className="text-xl font-semibold">Go back</h3>
+        <h3 className="text-xl font-semibold">Voltar</h3>
       </div>
 
       <UploadImageForm siteId={siteId} />
 
       <Card className="border-red-500 bg-red-500/10">
         <CardHeader>
-          <CardTitle className="text-red-500">Danger</CardTitle>
+          <CardTitle className="text-red-500">Perigo</CardTitle>
           <CardDescription>
-            This will delete your site and all articles associated with it.
-            Click the button below to delete everything
+            Isso irá deletar seu site e todos os artigos associados a ele.
+            Clique no botão abaixo para deletar tudo
           </CardDescription>
         </CardHeader>
         <CardFooter>
           <form action={deleteSite}>
             <input type="hidden" name="siteId" value={siteId} />
-            <SubmitButton text="Delete Everything" variant="destructive" />
+            <SubmitButton text="Deletar Tudo" variant="destructive" />
           </form>
         </CardFooter>
       </Card>

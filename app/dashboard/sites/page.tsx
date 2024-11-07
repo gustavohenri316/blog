@@ -41,16 +41,16 @@ export default async function SitesPage() {
         <Button asChild>
           <Link href="/dashboard/sites/new">
             <PlusCircle className="mr-2 size-4" />
-            Create Site
+            Criar Site
           </Link>
         </Button>
       </div>
 
       {data === undefined || data.length === 0 ? (
         <EmptyState
-          title="You don't have any Sites created"
-          description="You currently don't have any Sites. Please create some so that you can see them right here!"
-          buttonText="Create Site"
+          title="Você não tem Sites criados"
+          description="Atualmente você não tem Sites. Crie alguns para poder vê-los aqui!"
+          buttonText="Criar Site"
           href="/dashboard/sites/new"
         />
       ) : (
@@ -74,7 +74,7 @@ export default async function SitesPage() {
               <CardFooter>
                 <Button asChild className="w-full">
                   <Link href={`/dashboard/sites/${item.id}`}>
-                    View Articles
+                    Ver Artigos
                   </Link>
                 </Button>
               </CardFooter>

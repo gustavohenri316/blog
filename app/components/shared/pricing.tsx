@@ -10,7 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
-
 import Link from "next/link";
 
 interface iAppProps {
@@ -25,25 +24,25 @@ export const PricingPlans: iAppProps[] = [
   {
     id: 0,
     cardTitle: "Freelancer",
-    cardDescription: "The best pricing plan for people starting out.",
+    cardDescription: "O melhor plano de preços para quem está começando.",
     benefits: [
       "1 Site",
-      "Up to 1000 Visitors",
-      "Up to 1000 Visitors",
-      "Up to 1000 Visitors",
+      "Até 1000 Visitantes",
+      "Até 1000 Visitantes",
+      "Até 1000 Visitantes",
     ],
-    priceTitle: "Free",
+    priceTitle: "Grátis",
   },
   {
     id: 1,
     cardTitle: "Startup",
-    cardDescription: "The best pricing plan for professionals.",
+    cardDescription: "O melhor plano de preços para profissionais.",
     priceTitle: "$29",
     benefits: [
-      "Unlimited Sites",
-      "Unlimited Visitors",
-      "Unlimited Visitors",
-      "Unlimited Visitors",
+      "Sites Ilimitados",
+      "Visitantes Ilimitados",
+      "Visitantes Ilimitados",
+      "Visitantes Ilimitados",
     ],
   },
 ];
@@ -52,17 +51,14 @@ export function PricingTable() {
   return (
     <>
       <div className="mx-auto max-w-3xl text-center">
-        <p className="font-semibold text-primary">Pricing</p>
+        <p className="font-semibold text-primary">Preços</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
-          Pricing Plans for everyone and every budget!
+          Planos de Preços para todos e todos os orçamentos!
         </h1>
       </div>
-
       <p className="mx-auto mt-6 max-w-2xl text-center leading-tight text-muted-foreground">
-        Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi
-        iusto modi velit ut non voluptas in. Explicabo id ut laborum.
-      </p>
-
+  Oferecemos planos de assinatura flexíveis para atender às suas necessidades. Se você está começando ou já é um profissional experiente, temos a solução ideal para você. Escolha o plano que mais se adapta ao seu negócio e aproveite todos os benefícios de nossa plataforma, incluindo sites ilimitados, visitantes sem restrições e muito mais. Comece agora e leve sua presença online para o próximo nível!
+</p>
       <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
         {PricingPlans.map((item) => (
           <Card key={item.id} className={item.id === 1 ? "border-primary" : ""}>
@@ -73,7 +69,7 @@ export function PricingTable() {
                     <h3 className="text-primary">Startup</h3>
 
                     <p className="rounded-full bg-primary/20 px-3 py-1 text-xs font-semibold leading-5 text-primary">
-                      Most popular
+                      Mais popular
                     </p>
                   </div>
                 ) : (
@@ -100,11 +96,11 @@ export function PricingTable() {
             <CardFooter>
               {item.id === 1 ? (
                 <form className="w-full" action={createSubscription}>
-                  <SubmitButton text="Buy Plan" className="mt-5 w-full" />
+                  <SubmitButton text="Comprar Plano" className="mt-5 w-full" />
                 </form>
               ) : (
                 <Button variant="outline" className="mt-5 w-full" asChild>
-                  <Link href="/dashboard">Try for free</Link>
+                  <Link href="/dashboard">Tentar grátis</Link>
                 </Button>
               )}
             </CardFooter>

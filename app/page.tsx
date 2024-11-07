@@ -1,5 +1,4 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-
 import { redirect } from "next/navigation";
 import { Hero } from "./components/frontend/hero";
 import { Logos } from "./components/frontend/logos";

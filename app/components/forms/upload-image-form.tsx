@@ -22,42 +22,49 @@ interface iAppProps {
 
 export function UploadImageForm({ siteId }: iAppProps) {
   const [imageUrl, setImageUrl] = useState<undefined | string>(undefined);
+
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Image</CardTitle>
+        <CardTitle>Imagem do Site</CardTitle>
         <CardDescription>
-          This is the image of your site. you can change it here
+          Personalize a imagem que representa o seu site. Você pode alterá-la aqui a qualquer momento.
         </CardDescription>
       </CardHeader>
       <CardContent>
         {imageUrl ? (
-          <Image
-            src={imageUrl}
-            alt="Uploaded Image"
-            width={200}
-            height={200}
-            className="size-[200px] rounded-lg object-cover"
-          />
+          <div className="flex justify-center">
+            <Image
+              src={imageUrl}
+              alt="Imagem do Site Enviada"
+              width={200}
+              height={200}
+              className="rounded-lg object-cover"
+            />
+          </div>
         ) : (
-          <UploadDropzone
-            endpoint="imageUploader"
-            onClientUploadComplete={(res) => {
-              setImageUrl(res[0].url);
-              toast.success("Image has been uploaded");
-            }}
-            onUploadError={() => {
-              toast.error("Something went wrong.");
-            }}
-          />
+          <div className="flex justify-center">
+            <UploadDropzone
+              endpoint="imageUploader"
+              onClientUploadComplete={(res) => {
+                setImageUrl(res[0].url);
+                toast.success("Imagem carregada com sucesso.");
+              }}
+              onUploadError={() => {
+                toast.error("Ocorreu um erro ao carregar a imagem.");
+              }}
+            />
+          </div>
         )}
       </CardContent>
       <CardFooter>
-        <form action={updateImage}>
-          <input type="hidden" name="siteId" value={siteId} />
-          <input type="hidden" name="imageUrl" value={imageUrl} />
-          <SubmitButton text="Change Image" />
-        </form>
+        {imageUrl && (
+          <form action={updateImage}>
+            <input type="hidden" name="siteId" value={siteId} />
+            <input type="hidden" name="imageUrl" value={imageUrl} />
+            <SubmitButton text="Atualizar Imagem" />
+          </form>
+        )}
       </CardFooter>
     </Card>
   );

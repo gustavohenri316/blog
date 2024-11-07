@@ -43,13 +43,13 @@ export default async function SlugRoute({
             <ArrowLeft className="size-4" />
           </Link>
         </Button>
-        <h1 className="text-xl font-medium">Go Back</h1>
+        <h1 className="text-xl font-medium">Voltar</h1>
       </div>
 
       <div className="mb-10 flex flex-col items-center justify-center">
         <div className="m-auto w-full text-center md:w-7/12">
           <p className="m-auto my-5 w-10/12 text-sm font-light text-muted-foreground md:text-base">
-            {new Intl.DateTimeFormat("en-US", {
+            {new Intl.DateTimeFormat("pt-BR", {
               dateStyle: "medium",
             }).format(data.createdAt)}
           </p>

@@ -44,9 +44,7 @@ interface iAppProps {
 
 export function ArticleForm({ data, siteId, handle }: iAppProps) {
   const [imageUrl, setImageUrl] = useState<undefined | string>(data?.image);
-  const [value, setValue] = useState<JSONContent | undefined>(
-    data?.articleContent,
-  );
+  const [value, setValue] = useState<JSONContent | undefined>(data?.articleContent);
   const [slug, setSlugValue] = useState<undefined | string>(data?.slug);
   const [title, setTitle] = useState<undefined | string>(data?.title);
 
@@ -66,19 +64,20 @@ export function ArticleForm({ data, siteId, handle }: iAppProps) {
     const titleInput = title;
 
     if (titleInput?.length === 0 || titleInput === undefined) {
-      return toast.error("Pleaes create a title first");
+      return toast.error("Por favor, crie um título primeiro");
     }
 
     setSlugValue(slugify(titleInput));
 
-    return toast.success("Slug has been created");
+    return toast.success("Slug foi gerado com sucesso");
   }
+
   return (
     <Card className="mt-5">
       <CardHeader>
-        <CardTitle>Article Details</CardTitle>
+        <CardTitle>Detalhes do Artigo</CardTitle>
         <CardDescription>
-          Lipsum dolor sit amet, consectetur adipiscing elit
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec justo id felis tincidunt fermentum non eget dui.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -90,13 +89,14 @@ export function ArticleForm({ data, siteId, handle }: iAppProps) {
         >
           <input type="hidden" name="articleId" value={data?.id} />
           <input type="hidden" name="siteId" value={siteId} />
+          
           <div className="grid gap-2">
-            <Label>Title</Label>
+            <Label>Título</Label>
             <Input
               key={fields.title.key}
               name={fields.title.name}
               defaultValue={fields.title.initialValue}
-              placeholder="Nextjs blogging application"
+              placeholder="Aplicativo de blog em Next.js"
               onChange={(e) => setTitle(e.target.value)}
               value={title}
             />
@@ -109,7 +109,7 @@ export function ArticleForm({ data, siteId, handle }: iAppProps) {
               key={fields.slug.key}
               name={fields.slug.name}
               defaultValue={fields.slug.initialValue}
-              placeholder="Article Slug"
+              placeholder="Slug do Artigo"
               onChange={(e) => setSlugValue(e.target.value)}
               value={slug}
             />
@@ -119,27 +119,25 @@ export function ArticleForm({ data, siteId, handle }: iAppProps) {
               variant="secondary"
               type="button"
             >
-              <Atom className="mr-2 size-4" /> Generate Slug
+              <Atom className="mr-2 size-4" /> Gerar Slug
             </Button>
             <p className="text-sm text-red-500">{fields.slug.errors}</p>
           </div>
 
           <div className="grid gap-2">
-            <Label>Small Description</Label>
+            <Label>Descrição Curta</Label>
             <Textarea
               key={fields.smallDescription.key}
               name={fields.smallDescription.name}
               defaultValue={data?.smallDescription}
-              placeholder="Small Description for your blog article..."
+              placeholder="Descrição curta para seu artigo de blog..."
               className="h-32"
             />
-            <p className="text-sm text-red-500">
-              {fields.smallDescription.errors}
-            </p>
+            <p className="text-sm text-red-500">{fields.smallDescription.errors}</p>
           </div>
 
           <div className="grid gap-2">
-            <Label>Cover Image</Label>
+            <Label>Imagem de Capa</Label>
             <input
               type="hidden"
               name={fields.coverImage.name}
@@ -150,7 +148,7 @@ export function ArticleForm({ data, siteId, handle }: iAppProps) {
             {imageUrl ? (
               <Image
                 src={imageUrl}
-                alt="Uploaded Image"
+                alt="Imagem Enviada"
                 className="h-[200px] w-[200px] rounded-lg object-cover"
                 width={200}
                 height={200}
@@ -159,11 +157,11 @@ export function ArticleForm({ data, siteId, handle }: iAppProps) {
               <UploadDropzone
                 onClientUploadComplete={(res) => {
                   setImageUrl(res[0].url);
-                  toast.success("Image has been uploaded");
+                  toast.success("Imagem carregada com sucesso");
                 }}
                 endpoint="imageUploader"
                 onUploadError={() => {
-                  toast.error("Something went wrong...");
+                  toast.error("Ocorreu um erro ao carregar a imagem...");
                 }}
               />
             )}
@@ -172,7 +170,7 @@ export function ArticleForm({ data, siteId, handle }: iAppProps) {
           </div>
 
           <div className="grid gap-2">
-            <Label>Article Content</Label>
+            <Label>Conteúdo do Artigo</Label>
             <input
               type="hidden"
               name={fields.articleContent.name}
@@ -181,12 +179,10 @@ export function ArticleForm({ data, siteId, handle }: iAppProps) {
               value={JSON.stringify(value)}
             />
             <TailwindEditor onChange={setValue} initialValue={value} />
-            <p className="text-sm text-red-500">
-              {fields.articleContent.errors}
-            </p>
+            <p className="text-sm text-red-500">{fields.articleContent.errors}</p>
           </div>
 
-          <SubmitButton text="Edit Article" />
+          <SubmitButton text="Editar Artigo" />
         </form>
       </CardContent>
     </Card>

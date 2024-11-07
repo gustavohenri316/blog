@@ -2,27 +2,27 @@ import { CloudRain } from "lucide-react";
 
 const features = [
   {
-    name: "Sign up for free",
+    name: "Cadastre-se gratuitamente",
     description:
-      "Get started without any costs. Register in seconds and unlock a world of possibilities with no commitment required.",
+      "Comece sem custos. Registre-se em segundos e desbloqueie um mundo de possibilidades sem compromisso.",
     icon: CloudRain,
   },
   {
-    name: "Blazing fast performance",
+    name: "Desempenho ultrarrápido",
     description:
-      "Experience lightning-fast speeds. Our platform ensures that your blog loads quickly, keeping your readers engaged.",
+      "Experimente velocidades relâmpago. Nossa plataforma garante que seu blog carregue rapidamente, mantendo seus leitores engajados.",
     icon: CloudRain,
   },
   {
-    name: "Super secure with Kinde",
+    name: "Super seguro com Kinde",
     description:
-      "Your security is our priority. With Kinde, we protect your data with state-of-the-art encryption and authentication systems.",
+      "Sua segurança é nossa prioridade. Com o Kinde, protegemos seus dados com sistemas de criptografia e autenticação de última geração.",
     icon: CloudRain,
   },
   {
-    name: "Easy to use",
+    name: "Fácil de usar",
     description:
-      "Building your blog has never been easier. Our intuitive interface allows you to set up and manage your blog with minimal effort.",
+      "Criar seu blog nunca foi tão fácil. Nossa interface intuitiva permite que você configure e gerencie seu blog com o mínimo de esforço.",
     icon: CloudRain,
   },
 ];
@@ -31,14 +31,13 @@ export function Features() {
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-2xl lg:text-center">
-        <p className="font-semibold leading-7 text-primary">Blog Faster</p>
+        <p className="font-semibold leading-7 text-primary">Blog Mais Rápido</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          Get your blog up and running in minutes
+          Coloque seu blog no ar em minutos
         </h1>
         <p className="mt-6 text-base leading-snug text-muted-foreground">
-          Start your blog effortlessly with our simple and efficient platform.
-          With just a few clicks, youll have your blog live and ready to share
-          with the world.
+          Comece seu blog sem esforço com nossa plataforma simples e eficiente.
+          Com apenas alguns cliques, seu blog estará no ar e pronto para ser compartilhado com o mundo.
         </p>
       </div>
 

@@ -30,10 +30,10 @@ export function Hero() {
         <nav className="hidden md:flex md:justify-end md:space-x-4">
           <ModeToggle />
           <LoginLink>
-            <Button variant="secondary">Sign in</Button>
+            <Button variant="secondary">Entrar</Button>
           </LoginLink>
           <RegisterLink>
-            <Button>Sign up</Button>
+            <Button>Cadastrar</Button>
           </RegisterLink>
         </nav>
       </div>
@@ -42,24 +42,23 @@ export function Hero() {
         <div className="relative w-full items-center py-12 lg:py-20">
           <div className="text-center">
             <span className="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium tracking-tight text-primary">
-              Ultimate Blogging SaaS for Startups
+              O Melhor SaaS de Blogging para Startups
             </span>
 
             <h1 className="mt-8 text-4xl font-medium leading-none sm:text-6xl md:text-7xl lg:text-8xl">
-              Setup your Blog{" "}
-              <span className="block text-primary">in Minutes!</span>
+              Crie seu Blog{" "}
+              <span className="block text-primary">em Minutos!</span>
             </h1>
 
             <p className="mx-auto mt-4 max-w-xl text-base font-light tracking-tighter text-muted-foreground lg:text-lg">
-              Setting up your blog is hard and time consuming. We make it easy
-              for you to create a blog in minutes
+              Configurar seu blog pode ser difícil e demorado. Nós tornamos fácil para você criar um blog em minutos.
             </p>
             <div className="mt-5 flex w-full items-center justify-center gap-x-5">
               <LoginLink>
-                <Button variant="secondary">Sign in</Button>
+                <Button variant="secondary">Entrar</Button>
               </LoginLink>
               <RegisterLink>
-                <Button>Try for free</Button>
+                <Button>Teste gratuitamente</Button>
               </RegisterLink>
             </div>
           </div>
@@ -123,7 +122,7 @@ export function Hero() {
 
             <Image
               src={HeroImage}
-              alt="Hero image"
+              alt="Imagem do Hero"
               priority
               className="relative w-full rounded-lg border object-cover shadow-2xl lg:rounded-2xl"
             />

@@ -26,9 +26,9 @@ type Props = {
 };
 
 export const navLinks = [
-  { name: "Dashboard", href: "/dashboard", icon: Home },
+  { name: "Painel", href: "/dashboard", icon: Home },
   { name: "Sites", href: "/dashboard/sites", icon: Globe },
-  { name: "Pricing", href: "/dashboard/pricing", icon: DollarSign },
+  { name: "Preços", href: "/dashboard/pricing", icon: DollarSign },
 ];
 
 export default async function DashboardLayout({ children }: Readonly<Props>) {
@@ -67,7 +67,7 @@ export default async function DashboardLayout({ children }: Readonly<Props>) {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem>
-                  <LogoutLink>Log Out</LogoutLink>
+                  <LogoutLink>Sair</LogoutLink>
                   <DropdownMenuShortcut>
                     <ExternalLink />
                   </DropdownMenuShortcut>

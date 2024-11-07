@@ -43,7 +43,7 @@ export default async function EditRoute({
             <ArrowLeft className="size-4" />
           </Link>
         </Button>
-        <h1 className="text-2xl font-semibold">Edit Article</h1>
+        <h1 className="text-2xl font-semibold">Editar Artigo</h1>
       </div>
       <ArticleForm handle={editPostActions} data={data} siteId={siteId} />
     </div>

@@ -34,43 +34,43 @@ export default function NewSite() {
     <div className="flex flex-1 flex-col items-center justify-center">
       <Card className="max-w-[450px]">
         <CardHeader>
-          <CardTitle>Create Site</CardTitle>
+          <CardTitle>Criar Site</CardTitle>
           <CardDescription>
-            Create your Site here. Click the button below once your done...
+            Crie seu Site aqui. Clique no botão abaixo quando terminar...
           </CardDescription>
         </CardHeader>
         <form id={form.id} onSubmit={form.onSubmit} action={action}>
           <CardContent>
             <div className="flex flex-col gap-y-6">
               <div className="grid gap-2">
-                <Label>Site Name</Label>
+                <Label>Nome do Site</Label>
                 <Input
                   name={fields.name.name}
                   key={fields.name.key}
                   defaultValue={fields.name.initialValue}
-                  placeholder="Site Name"
+                  placeholder="Nome do Site"
                 />
                 <p className="text-sm text-red-500">{fields.name.errors}</p>
               </div>
               <div className="grid gap-2">
-                <Label>Subdirectory</Label>
+                <Label>Subdiretório</Label>
                 <Input
                   name={fields.subdirectory.name}
                   key={fields.subdirectory.key}
                   defaultValue={fields.subdirectory.initialValue}
-                  placeholder="Subdirectory"
+                  placeholder="Subdiretório"
                 />
                 <p className="text-sm text-red-500">
                   {fields.subdirectory.errors}
                 </p>
               </div>
               <div className="grid gap-2">
-                <Label>Description</Label>
+                <Label>Descrição</Label>
                 <Textarea
                   name={fields.description.name}
                   key={fields.description.key}
                   defaultValue={fields.description.initialValue}
-                  placeholder="Small Description for you site"
+                  placeholder="Pequena descrição para seu site"
                 />
                 <p className="text-sm text-red-500">
                   {fields.description.errors}
@@ -80,7 +80,7 @@ export default function NewSite() {
           </CardContent>
           <CardFooter>
             <div className="flex w-full justify-end">
-              <SubmitButton text="Create Site" />
+              <SubmitButton text="Criar Site" />
             </div>
           </CardFooter>
         </form>

@@ -52,16 +52,16 @@ export default async function PricingPage() {
     return (
       <Card className="w-full">
         <CardHeader>
-          <CardTitle>Edit Subscription</CardTitle>
+          <CardTitle>Editar Assinatura</CardTitle>
           <CardDescription>
-            Click on the button below, this will give you the opportunity to
-            change your payment details and view your statement at the same
-            time.
+            Clique no botão abaixo, isso lhe dará a oportunidade de
+            alterar seus dados de pagamento e visualizar sua fatura ao
+            mesmo tempo.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form action={createCustomerPortal}>
-            <SubmitButton text="View Subscription Details" />
+            <SubmitButton text="Ver Detalhes da Assinatura" />
           </form>
         </CardContent>
       </Card>

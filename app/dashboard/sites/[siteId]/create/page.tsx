@@ -18,7 +18,7 @@ export default async function ArticleCreatePage({
             <ArrowLeft className="size-4" />
           </Link>
         </Button>
-        <h1 className="text-xl font-semibold">Create Article</h1>
+        <h1 className="text-xl font-semibold">Criar Artigo</h1>
       </div>
 
       <ArticleForm siteId={siteId} handle={createPostAction} />
