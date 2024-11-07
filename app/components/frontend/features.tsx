@@ -37,7 +37,7 @@ export function Features() {
         </h1>
         <p className="mt-6 text-base leading-snug text-muted-foreground">
           Start your blog effortlessly with our simple and efficient platform.
-          With just a few clicks, you'll have your blog live and ready to share
+          With just a few clicks, youll have your blog live and ready to share
           with the world.
         </p>
       </div>
